@@ -7,10 +7,10 @@ import java.util.Date;
 import java.util.UUID;
 
 // a vendor checking account, enough details to call the vendor to get one and work with it
-@Document(collection = "checkingaccounts")
-public class CheckingAccount
+@Document(collection = "savingsaccountproducts")
+public class SavingsAccount
 {
-	@Id private UUID checkingAccountId = UUID.randomUUID();
+	@Id private UUID savingsAccountProductId = UUID.randomUUID();
 	private String vendorProductId;
 	private String vendorProductDescription;
 	

@@ -17,9 +17,7 @@ public class Customer
 	private String firstName;
 	private String middleName;
 	private String lastName;
-	private String mobilePhone;
-	private String homePhone;
-	private String workPhone;
+	private List<Phone> phones;
 	private String email;
 	private Date joinDate;
 	private String notes;
@@ -30,8 +28,8 @@ public class Customer
 	}
 	
 	public Customer(String tin, Date birthDate, List<Address> addresses, 
-			String firstName, String middleName, String lastName, String mobilePhone, 
-			String homePhone, String workPhone, String email, Date joinDate, String notes)
+			String firstName, String middleName, String lastName, List<Phone> phones,  
+			String email, Date joinDate, String notes)
 	{
 		this.tin = tin;
 		this.birthDate = birthDate;
@@ -39,9 +37,7 @@ public class Customer
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
-		this.mobilePhone = mobilePhone;
-		this.homePhone = homePhone;
-		this.workPhone = workPhone;
+		this.phones = phones;
 		this.email = email;
 		this.joinDate = joinDate;
 		this.notes = notes;
@@ -117,34 +113,14 @@ public class Customer
 		this.lastName = lastName;
 	}
 
-	public String getMobilePhone()
+	public List<Phone> getPhones()
 	{
-		return mobilePhone;
+		return phones;
 	}
 
-	public void setMobilePhone(String mobilePhone)
+	public void setPhones(List<Phone> phones)
 	{
-		this.mobilePhone = mobilePhone;
-	}
-
-	public String getHomePhone()
-	{
-		return homePhone;
-	}
-
-	public void setHomePhone(String homePhone)
-	{
-		this.homePhone = homePhone;
-	}
-
-	public String getWorkPhone()
-	{
-		return workPhone;
-	}
-
-	public void setWorkPhone(String workPhone)
-	{
-		this.workPhone = workPhone;
+		this.phones = phones;
 	}
 
 	public String getEmail()

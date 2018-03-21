@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.huntington.moolah.rest.model.Address;
 import com.huntington.moolah.rest.model.Customer;
+import com.huntington.moolah.rest.model.Phone;
 
 @Component
 public class CustomerInitializer
@@ -41,13 +42,16 @@ public class CustomerInitializer
 		);		
 		customer.setEmail("custone@gmail.com");
 		customer.setFirstName("Alfred");
-		customer.setHomePhone("614-555-0001");
+		customer.setPhones(Arrays.asList(
+				new Phone("home", "614-555-0001", true),
+				new Phone("mobile", "614-555-0002", true),
+				new Phone("work", "614-555-0003", false)
+				)	
+		);
 		customer.setJoinDate(new Date());
 		customer.setLastName("Morris");
 		customer.setMiddleName("J");
-		customer.setMobilePhone("614-555-0002");
 		customer.setNotes("Large deposits in the fall");
-		customer.setWorkPhone("614-555-0003");
 		customers.add(customer);
 		
 		customer = new Customer();
@@ -60,13 +64,16 @@ public class CustomerInitializer
 		);
 		customer.setEmail("custtwo@gmail.com");
 		customer.setFirstName("Bill");
-		customer.setHomePhone("614-555-0004");
+		customer.setPhones(Arrays.asList(
+				new Phone("home", "614-555-0004", true),
+				new Phone("mobile", "614-555-0005", true),
+				new Phone("work", "614-555-0006", false)
+				)	
+		);
 		customer.setJoinDate(new Date());
 		customer.setLastName("Hill");
 		customer.setMiddleName("Phillip");
-		customer.setMobilePhone("614-555-0005");
 		customer.setNotes("Goes by Jack");
-		customer.setWorkPhone("614-555-0006");
 		customers.add(customer);
 		
 		repository.saveAll(customers);
